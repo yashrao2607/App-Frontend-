@@ -105,7 +105,7 @@ class MarketAnalystScreen extends StatelessWidget {
             const SizedBox(height: 24),
             _buildAnalysisResultCard(),
             const SizedBox(height: 24),
-            _buildFaqSection(),
+            _buildFaqSection(context),
           ],
         ),
       ),
@@ -225,7 +225,7 @@ class MarketAnalystScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildFaqSection() {
+  Widget _buildFaqSection(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -238,15 +238,15 @@ class MarketAnalystScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        _buildFaqItem('What kind of questions can I ask?'),
-        _buildFaqItem('How accurate is the price information?'),
-        _buildFaqItem('Can I ask about future price predictions?'),
-        _buildFaqItem('What locations and crops are supported?'),
+        _buildFaqItem(context, 'What kind of questions can I ask?'),
+        _buildFaqItem(context, 'How accurate is the price information?'),
+        _buildFaqItem(context, 'Can I ask about future price predictions?'),
+        _buildFaqItem(context, 'What locations and crops are supported?'),
       ],
     );
   }
 
-  Widget _buildFaqItem(String question) {
+  Widget _buildFaqItem(BuildContext context, String question) {
     return Theme(
       data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
       child: ExpansionTile(

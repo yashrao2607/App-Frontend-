@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/crop_doctor_screen.dart';
 import 'package:myapp/crop_recommender_screen.dart';
+import 'package:myapp/govt_schemes_screen.dart';
 import 'package:myapp/market_analyst_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -103,12 +104,20 @@ class DashboardScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            _buildDashboardCard(
-              icon: Icons.account_balance_outlined,
-              title: 'Govt Schemes',
-              subtitle: 'Find government schemes for you.',
-              iconColor: primaryGreen,
-              cardColor: cardBg,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const GovtSchemesScreen()),
+                );
+              },
+              child: _buildDashboardCard(
+                icon: Icons.account_balance_outlined,
+                title: 'Govt Schemes',
+                subtitle: 'Find government schemes for you.',
+                iconColor: primaryGreen,
+                cardColor: cardBg,
+              ),
             ),
             const SizedBox(height: 16),
             _buildDashboardCard(
