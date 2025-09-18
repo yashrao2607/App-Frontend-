@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/crop_doctor_screen.dart';
 import 'package:myapp/crop_recommender_screen.dart';
+import 'package:myapp/e_learning_screen.dart';
 import 'package:myapp/govt_schemes_screen.dart';
 import 'package:myapp/market_analyst_screen.dart';
 import 'package:myapp/tracker_screen.dart';
@@ -137,12 +138,20 @@ class DashboardScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            _buildDashboardCard(
-              icon: Icons.book_outlined,
-              title: 'E-Learning',
-              subtitle: 'Browse guides and tutorials.',
-              iconColor: primaryGreen,
-              cardColor: cardBg,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ELearningScreen()),
+                );
+              },
+              child: _buildDashboardCard(
+                icon: Icons.book_outlined,
+                title: 'E-Learning',
+                subtitle: 'Browse guides and tutorials.',
+                iconColor: primaryGreen,
+                cardColor: cardBg,
+              ),
             ),
             const SizedBox(height: 24),
             _buildWeatherWidget(cardColor: cardBg),
