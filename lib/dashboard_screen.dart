@@ -5,6 +5,7 @@ import 'package:myapp/e_learning_screen.dart';
 import 'package:myapp/govt_schemes_screen.dart';
 import 'package:myapp/market_analyst_screen.dart';
 import 'package:myapp/tracker_screen.dart';
+import 'package:myapp/widgets/app_drawer.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -20,9 +21,13 @@ class DashboardScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: darkBg,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu, color: Colors.white),
-          onPressed: () {},
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu, color: Colors.white),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
         ),
         title: IconButton(
           icon: const Icon(Icons.translate, color: Colors.white),
@@ -36,6 +41,7 @@ class DashboardScreen extends StatelessWidget {
           ),
         ],
       ),
+      drawer: const AppDrawer(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(

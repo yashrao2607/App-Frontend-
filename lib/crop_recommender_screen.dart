@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/widgets/app_drawer.dart';
 
 class CropRecommenderScreen extends StatefulWidget {
   const CropRecommenderScreen({super.key});
@@ -20,9 +21,13 @@ class _CropRecommenderScreenState extends State<CropRecommenderScreen> {
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu, color: Colors.white),
-          onPressed: () {},
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu, color: Colors.white),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
         ),
         actions: [
           IconButton(
@@ -68,6 +73,7 @@ class _CropRecommenderScreenState extends State<CropRecommenderScreen> {
           const SizedBox(width: 16),
         ],
       ),
+      drawer: const AppDrawer(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(

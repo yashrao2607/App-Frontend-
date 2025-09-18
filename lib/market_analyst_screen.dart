@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/widgets/app_drawer.dart';
 
 class MarketAnalystScreen extends StatelessWidget {
   const MarketAnalystScreen({super.key});
@@ -10,9 +11,13 @@ class MarketAnalystScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu, color: Colors.white),
-          onPressed: () {},
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu, color: Colors.white),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
         ),
         actions: [
           IconButton(
@@ -58,6 +63,7 @@ class MarketAnalystScreen extends StatelessWidget {
           const SizedBox(width: 16),
         ],
       ),
+      drawer: const AppDrawer(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(

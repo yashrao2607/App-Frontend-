@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/widgets/app_drawer.dart';
 
 class ELearningScreen extends StatefulWidget {
   const ELearningScreen({super.key});
@@ -24,9 +25,13 @@ class _ELearningScreenState extends State<ELearningScreen>
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu, color: Colors.white),
-          onPressed: () {},
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu, color: Colors.white),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
         ),
         actions: [
           IconButton(
@@ -72,6 +77,7 @@ class _ELearningScreenState extends State<ELearningScreen>
           const SizedBox(width: 16),
         ],
       ),
+      drawer: const AppDrawer(),
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
