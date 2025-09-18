@@ -13,19 +13,20 @@ This is a Flutter application that provides farmers with AI-powered tools to dia
 *   **AI Crop Doctor Screen:** A screen to diagnose crop diseases by uploading an image.
 *   **AI Crop Recommender Screen:** A screen to get crop recommendations based on farm details.
 *   **Market Analyst Screen:** A screen to get market price analysis.
+*   **Govt Schemes Screen:** A screen to find information about government schemes.
 
-### Current Task: Implement Govt Schemes Screen
+### Current Task: Implement Expense & Profit Tracker Screen
 
 #### Plan:
-1.  **Create `lib/govt_schemes_screen.dart`:** This file will contain the UI for the "Scheme & Information Hub" screen.
+1.  **Create `lib/tracker_screen.dart`:** This file will contain the UI for the "Expense & Profit Tracker" screen.
 2.  **Implement the UI:**
     *   Use a `Scaffold` with a dark theme.
     *   Create a custom `AppBar`.
-    *   Add the "Scheme & Information Hub" title and subtitle.
-    *   Include a "Back to Dashboard" button.
-    *   Create the "Key Government Schemes" section with cards for each scheme.
-    *   Create the "Latest News & Updates" section.
-    *   Create the "Find a Specific Scheme" section.
+    *   Add the "Expense & Profit Tracker" title and subtitle.
+    *   Include "Add Transaction" and "Back to Dashboard" buttons.
+    *   Create cards for "Total Income," "Total Expense," and "Net Profit / Loss."
+    *   Add a "Recent Transactions" section.
+    *   Add an "Income vs. Expense" chart placeholder.
     *   Include a floating action button.
 3.  **Update Navigation:**
-    *   In `lib/dashboard_screen.dart`, wrap the "Govt Schemes" card with a `GestureDetector` to navigate to the new screen on tap.
+    *   In `lib/dashboard_screen.dart`, wrap the "Tracker" card with a `GestureDetector` to navigate to the new screen on tap.
