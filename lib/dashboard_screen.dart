@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/crop_doctor_screen.dart';
+import 'package:myapp/crop_recommender_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -52,20 +54,36 @@ class DashboardScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            _buildDashboardCard(
-              icon: Icons.shield_outlined,
-              title: 'Crop Doctor',
-              subtitle: 'Diagnose crop diseases instantly.',
-              iconColor: primaryGreen,
-              cardColor: cardBg,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CropDoctorScreen()),
+                );
+              },
+              child: _buildDashboardCard(
+                icon: Icons.shield_outlined,
+                title: 'Crop Doctor',
+                subtitle: 'Diagnose crop diseases instantly.',
+                iconColor: primaryGreen,
+                cardColor: cardBg,
+              ),
             ),
             const SizedBox(height: 16),
-            _buildDashboardCard(
-              icon: Icons.eco_outlined,
-              title: 'Crop Recommender',
-              subtitle: 'Get AI-powered crop suggestions.',
-              iconColor: primaryGreen,
-              cardColor: cardBg,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CropRecommenderScreen()),
+                );
+              },
+              child: _buildDashboardCard(
+                icon: Icons.eco_outlined,
+                title: 'Crop Recommender',
+                subtitle: 'Get AI-powered crop suggestions.',
+                iconColor: primaryGreen,
+                cardColor: cardBg,
+              ),
             ),
             const SizedBox(height: 16),
             _buildDashboardCard(
