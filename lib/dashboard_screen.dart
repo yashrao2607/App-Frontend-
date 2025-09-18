@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/crop_doctor_screen.dart';
 import 'package:myapp/crop_recommender_screen.dart';
+import 'package:myapp/market_analyst_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -86,12 +87,20 @@ class DashboardScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            _buildDashboardCard(
-              icon: Icons.bar_chart_outlined,
-              title: 'Market Analyst',
-              subtitle: 'Get real-time price analysis.',
-              iconColor: primaryGreen,
-              cardColor: cardBg,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MarketAnalystScreen()),
+                );
+              },
+              child: _buildDashboardCard(
+                icon: Icons.bar_chart_outlined,
+                title: 'Market Analyst',
+                subtitle: 'Get real-time price analysis.',
+                iconColor: primaryGreen,
+                cardColor: cardBg,
+              ),
             ),
             const SizedBox(height: 16),
             _buildDashboardCard(
