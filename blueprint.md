@@ -16,15 +16,21 @@ This is a Flutter application that provides farmers with AI-powered tools to dia
 *   **Govt Schemes Screen:** A screen to find information about government schemes.
 *   **Expense & Profit Tracker Screen:** A screen to track farm expenses and profits.
 *   **E-Learning Hub Screen:** A screen for browsing farming guides and tutorials.
+*   **Navigation Drawer:** A side navigation drawer for easy access to all screens.
+*   **Live Weather Forecast Screen:** A screen to get live weather updates.
+*   **Community Forum Screen:** A screen for farmers to connect and chat.
+*   **Krishi Store Screen:** A screen for purchasing farming supplies.
 
-### Current Task: Implement Navigation Drawer
+### Current Task: Implement Application Settings Screen
 
 #### Plan:
-1.  **Create `lib/widgets/app_drawer.dart`:** This file will define the navigation drawer widget.
-2.  **Implement the UI of the drawer:**
-    *   Add a header with the app name.
-    *   Add `ListTile`s for each navigation item.
-    *   Implement navigation to the respective screens.
-3.  **Integrate the drawer into all existing screens:**
-    *   Add the `drawer` property to the `Scaffold` of each screen.
-    *   Update the menu icon's `onPressed` callback to open the drawer.
+1.  **Create `lib/settings_screen.dart`:** This file will contain the UI for the "Application Settings" screen.
+2.  **Implement the UI:**
+    *   Use a `Scaffold` with a dark theme.
+    *   Create a custom `AppBar`.
+    *   Add the "Application Settings" title and subtitle.
+    *   Include a "Back to Dashboard" button.
+    *   Create sections for "About," "App Version," "Theme," etc.
+    *   Include a floating action button.
+3.  **Update Navigation:**
+    *   In `lib/widgets/app_drawer.dart`, add a `ListTile` for "Settings" and navigate to the new screen on tap.
