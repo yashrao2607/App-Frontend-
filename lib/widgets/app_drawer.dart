@@ -10,6 +10,7 @@ import 'package:myapp/weather_screen.dart';
 import 'package:myapp/community_screen.dart';
 import 'package:myapp/shop_screen.dart';
 import 'package:myapp/settings_screen.dart';
+import 'package:myapp/profile_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -47,7 +48,17 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           _createDrawerItem(
-              icon: Icons.person_outline, text: 'Profile', onTap: () {}),
+            icon: Icons.person_outline,
+            text: 'Profile',
+            isSelected: currentRoute == '/profile',
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProfileScreen(),
+                settings: const RouteSettings(name: '/profile'),
+              ),
+            ),
+          ),
           _createDrawerItem(
             icon: Icons.dashboard_outlined,
             text: 'Dashboard',

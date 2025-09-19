@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/privacy_policy_screen.dart';
+import 'package:myapp/terms_of_use_screen.dart';
 import 'package:myapp/widgets/app_drawer.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -161,7 +163,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            _buildPolicyButtons(),
+            _buildPolicyButtons(context),
           ],
         ),
       ),
@@ -263,12 +265,17 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPolicyButtons() {
+  Widget _buildPolicyButtons(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         OutlinedButton.icon(
-          onPressed: () {},
+          onPressed: () {
+             Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const PrivacyPolicyScreen()),
+            );
+          },
           icon: const Icon(Icons.privacy_tip_outlined, color: Colors.white70),
           label: const Text('Privacy Policy', style: TextStyle(color: Colors.white70)),
           style: OutlinedButton.styleFrom(
@@ -279,7 +286,12 @@ class SettingsScreen extends StatelessWidget {
           ),
         ),
         OutlinedButton.icon(
-          onPressed: () {},
+          onPressed: () {
+             Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const TermsOfUseScreen()),
+            );
+          },
           icon: const Icon(Icons.gavel_outlined, color: Colors.white70),
           label: const Text('Terms of Use', style: TextStyle(color: Colors.white70)),
           style: OutlinedButton.styleFrom(

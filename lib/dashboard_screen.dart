@@ -3,7 +3,10 @@ import 'package:myapp/crop_doctor_screen.dart';
 import 'package:myapp/crop_recommender_screen.dart';
 import 'package:myapp/e_learning_screen.dart';
 import 'package:myapp/govt_schemes_screen.dart';
+import 'package:myapp/language_selection_screen.dart';
 import 'package:myapp/market_analyst_screen.dart';
+import 'package:myapp/notification_screen.dart';
+import 'package:myapp/profile_screen.dart';
 import 'package:myapp/tracker_screen.dart';
 import 'package:myapp/widgets/app_drawer.dart';
 
@@ -31,13 +34,60 @@ class DashboardScreen extends StatelessWidget {
         ),
         title: IconButton(
           icon: const Icon(Icons.translate, color: Colors.white),
-          onPressed: () {},
+          onPressed: () {
+             Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const LanguageSelectionScreen()),
+            );
+          },
         ),
         centerTitle: true,
         actions: [
+           Stack(
+            alignment: Alignment.center,
+            children: [
+              IconButton(
+                icon: const Icon(Icons.notifications, color: Colors.white),
+                onPressed: () {
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const NotificationScreen()),
+                  );
+                },
+              ),
+              Positioned(
+                top: 10,
+                right: 10,
+                child: Container(
+                  padding: const EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  constraints: const BoxConstraints(
+                    minWidth: 16,
+                    minHeight: 16,
+                  ),
+                  child: const Text(
+                    '3',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
+          ),
           IconButton(
             icon: const Icon(Icons.person_outline, color: Colors.white),
-            onPressed: () {},
+            onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProfileScreen()),
+              );
+            },
           ),
         ],
       ),
